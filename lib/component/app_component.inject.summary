@@ -1,0 +1,16 @@
+{
+  "asset": "asset:merchant/lib/component/app_component.dart",
+  "summary": {
+    "injector": [
+      {
+        "name": "AppComponent",
+        "providers": [],
+        "modules": [
+          "asset:merchant/lib/component/modules/PreferenceModule.dart#PreferenceModule"
+        ]
+      }
+    ],
+    "module": [],
+    "injectable": []
+  }
+}

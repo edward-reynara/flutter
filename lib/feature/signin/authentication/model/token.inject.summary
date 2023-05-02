@@ -1,0 +1,8 @@
+{
+  "asset": "asset:merchant/lib/feature/signin_signup/authentication/model/token.dart",
+  "summary": {
+    "injector": [],
+    "module": [],
+    "injectable": []
+  }
+}
