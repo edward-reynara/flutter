@@ -65,9 +65,9 @@ class MainPage extends StatelessWidget {
                 unselectedItemColor: Colors.black54,
                 selectedItemColor: Theme.of(context).primaryColor,
                 type: BottomNavigationBarType.fixed,
-                //showSelectedLabels: true,
                 showUnselectedLabels: true,
-                selectedFontSize: 12,
+                unselectedFontSize: 8,
+                selectedFontSize: 10,
                 currentIndex:
                     BlocProvider.of<BottomNavigationBloc>(context).currentIndex,
                 items: <BottomNavigationBarItem>[
@@ -76,26 +76,31 @@ class MainPage extends StatelessWidget {
                         Icons.home,
                         //color: Colors.indigo, size: 25
                       ),
-                      label: "Home"),
-                  BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.list,
-                        //color: Colors.indigo, size: 25
-                      ),
-                      label: "Categories"),
-                  addPageBarItem(context),
+                      label: "Perpustakaan"),
                   BottomNavigationBarItem(
                       icon: Icon(
                         Icons.search,
                         //color: Colors.indigo, size: 25
                       ),
-                      label: "Search"),
+                      label: "Temukan"),
                   BottomNavigationBarItem(
                       icon: Icon(
-                        Icons.settings,
+                        Icons.card_giftcard,
                         //color: Colors.indigo, size: 25
                       ),
-                      label: "Settings"),
+                      label: "Hadiah"),
+                  BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.list,
+                        //color: Colors.indigo, size: 25
+                      ),
+                      label: "Genre"),
+                  BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.account_circle,
+                        //color: Colors.indigo, size: 25
+                      ),
+                      label: "Profil"),
                 ],
                 onTap: (index) => BlocProvider.of<BottomNavigationBloc>(context)
                     .add(PageTapped(index: index)),

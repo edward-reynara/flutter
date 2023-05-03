@@ -29,57 +29,59 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            "Home",
-            style: TextStyle(color: Colors.white),
-          ),
-          iconTheme: IconThemeData(color: Colors.white),
-          backgroundColor: Theme.of(context).primaryColor,
-          actions: [
-            Padding(
-                padding: EdgeInsets.only(right: 8),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.notifications, color: Colors.white),
-                ))
-          ],
-        ),
+        // appBar: AppBar(
+        //   centerTitle: true,
+        //   title: Text(
+        //     "Home",
+        //     style: TextStyle(color: Colors.white),
+        //   ),
+        //   iconTheme: IconThemeData(color: Colors.white),
+        //   backgroundColor: Theme.of(context).primaryColor,
+        //   actions: [
+        //     Padding(
+        //         padding: EdgeInsets.only(right: 8),
+        //         child: IconButton(
+        //           onPressed: () {},
+        //           icon: Icon(Icons.notifications, color: Colors.white),
+        //         ))
+        //   ],
+        // ),
         body: BlocBuilder<HomeBloc, HomeState>(builder: (context, state) {
-          if (state is HomeLoading) {
-            return LoadingWidget(visible: true);
-          }
-          if (state is HomeSuccess) {
-            return LoadingWidget(visible: false);
-          }
-          if (state is HomeFailure) {
-            return LoadingWidget(visible: false);
-          }
-          if (state is HomeExpired) {
-            return AlertWidget();
-          }
-          // if (state is EmptyHome) {
-          //   LoadingWidget(visible: false);
-          //   return Center(
-          //       child: Text(state.text,
-          //           textAlign: TextAlign.center,
-          //           style: TextStyle(fontSize: 16)));
-          // }
-          if (state is HomeLoaded) {
-            LoadingWidget(visible: false);
-            Center(
-              child: Text("SS"),
-            );
-          }
-          if (state is ExpiredLoaded) {
-            LoadingWidget(visible: false);
-            // print("__Loaded_state:" + state.product[0].id.toString());
-            Center(
-              child: Text("SS"),
-            );
-          }
-          return Container();
-        }));
+      if (state is HomeLoading) {
+        return LoadingWidget(visible: true);
+      }
+      if (state is HomeSuccess) {
+        return LoadingWidget(visible: false);
+      }
+      if (state is HomeFailure) {
+        return LoadingWidget(visible: false);
+      }
+      if (state is HomeExpired) {
+        return AlertWidget();
+      }
+      // if (state is EmptyHome) {
+      //   LoadingWidget(visible: false);
+      //   return Center(
+      //       child: Text(state.text,
+      //           textAlign: TextAlign.center,
+      //           style: TextStyle(fontSize: 16)));
+      // }
+      if (state is HomeLoaded) {
+        LoadingWidget(visible: false);
+        Center(
+          child: Text("SS"),
+        );
+      }
+      if (state is ExpiredLoaded) {
+        LoadingWidget(visible: false);
+        // print("__Loaded_state:" + state.product[0].id.toString());
+        Center(
+          child: Text("SS"),
+        );
+      }
+      return Center(
+        child: Text("test"),
+      );
+    }));
   }
 }

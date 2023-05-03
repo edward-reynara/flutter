@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class Palette {
@@ -13,5 +12,6 @@ class Palette {
   static Color whiteBg = Color(0xfff4f6f8);
 
   static Color primaryTextColor = Color.fromRGBO(93, 84, 164, 0);
+  // static Color primaryTextColor = Color.fromRGBO(241, 90, 34, 1);
   //static Color whiteBg = Color.fromRGBO(244, 246, 248, 0);
 }
