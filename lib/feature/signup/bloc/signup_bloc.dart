@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:ringkasan_buku/feature/signup/bloc/signup_event.dart';
 import 'package:ringkasan_buku/feature/signup/bloc/signup_state.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../signin/resource/auth_repository.dart';
 

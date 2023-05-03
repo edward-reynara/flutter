@@ -1,13 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../app/Pallete.dart';
 import '../../../component/helper/env.dart';
 import '../../../component/helper/internet_check.dart';
 import '../../../component/helper/localization.dart';
 import '../../../component/http/http_provider.dart';
-import '../../../component/navigation/routes.dart';
 import '../../../component/widget/loading_widget.dart';
 import '../../signup/ui/sign_up_page.dart';
 import '../bloc/signin_bloc.dart';
@@ -30,28 +27,28 @@ class _SignInFormState extends State<SignInForm> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Email and Password is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (emailController.text == "") {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Email is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (passwordController.text == "") {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Password is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (!(emailController.text.contains("@"))) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Wrong type of email!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else {
@@ -72,7 +69,7 @@ class _SignInFormState extends State<SignInForm> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('${state.error}'),
-              backgroundColor: Theme.of(context).errorColor,
+              backgroundColor: Theme.of(context).colorScheme.error,
             ),
           );
         }

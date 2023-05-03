@@ -1,8 +1,4 @@
-
-
 import 'package:flutter/material.dart';
-
-import 'Pallete.dart';
 
 final ThemeData basicTheme = _buildBasicTheme();
 
@@ -12,20 +8,19 @@ ThemeData _buildBasicTheme() {
   final ColorScheme colorScheme = const ColorScheme.light()
       .copyWith(primary: primaryColor, secondary: secondaryColor);
   final ThemeData base = ThemeData(
-    fontFamily: "Poppins",
-    backgroundColor: Colors.white,
-    primaryColor: primaryColor,
-    primaryColorLight: secondaryColor,
-    buttonColor: primaryColor,
-    indicatorColor: Colors.white,
-    toggleableActiveColor: primaryColor,
-    accentColor: secondaryColor,
-    errorColor: Colors.red,
-    buttonTheme: ButtonThemeData(
-      colorScheme: colorScheme,
-      textTheme: ButtonTextTheme.primary,
-    )
-  );
+      fontFamily: "Poppins",
+      backgroundColor: Colors.white,
+      primaryColor: primaryColor,
+      primaryColorLight: secondaryColor,
+      buttonColor: primaryColor,
+      indicatorColor: Colors.white,
+      toggleableActiveColor: primaryColor,
+      accentColor: secondaryColor,
+      errorColor: Colors.red,
+      buttonTheme: ButtonThemeData(
+        colorScheme: colorScheme,
+        textTheme: ButtonTextTheme.primary,
+      ));
   return base.copyWith(
       textTheme: _buildTextTheme(base.textTheme),
       primaryTextTheme: _buildTextTheme(base.primaryTextTheme),
@@ -34,6 +29,6 @@ ThemeData _buildBasicTheme() {
 
 TextTheme _buildTextTheme(TextTheme base) {
   return base.copyWith(
-      headline6: base.headline6.copyWith(fontFamily: 'Poppins'),
+    headline6: base.headline6.copyWith(fontFamily: 'Poppins'),
   );
 }

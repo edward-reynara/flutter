@@ -4,14 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ringkasan_buku/feature/home/resource/home_repository.dart';
 import 'package:ringkasan_buku/feature/signin/authentication/bloc/authentication_bloc.dart';
 import 'package:ringkasan_buku/feature/signin/authentication/bloc/authentication_state.dart';
-import 'package:ringkasan_buku/feature/signin/resource/auth_repository.dart';
-import 'package:ringkasan_buku/feature/signin/ui/sign_in_page.dart';
 
 import '../component/helper/env.dart';
-import '../component/helper/internet_check.dart';
 import '../component/http/http_provider.dart';
 import '../component/resource/device/device_repository.dart';
-import '../component/widget/loading_widget.dart';
 import 'main/bottom_navigation/bottom_navigation_bloc.dart';
 import 'main/bottom_navigation/bottom_navigation_event.dart';
 import 'main/ui/main_page.dart';

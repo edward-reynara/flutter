@@ -18,7 +18,7 @@ class GeneralApiProvider {
         'deviceType': deviceType,
       });
       return await apiProvider.post('$baseUrl/update', data);
-    } on Error catch (e) {
+    } on Error {
       //throw Exception('Failed to load post ' + e.toString());
     }
   }

@@ -1,13 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../component/helper/env.dart';
-import '../../../component/http/http_provider.dart';
 import '../../../component/widget/alert_widget.dart';
 import '../../../component/widget/loading_widget.dart';
 import '../bloc/home_bloc.dart';
 import '../bloc/home_state.dart';
-import '../resource/home_repository.dart';
 
 class HomePage extends StatefulWidget {
   @override

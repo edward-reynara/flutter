@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../component/helper/localization.dart';
-import '../../../component/helper/restart_app.dart';
-import '../../../component/navigation/routes.dart';
 import '../../../component/widget/loading_widget.dart';
-import '../../landing_page.dart';
 import '../bloc/signup_bloc.dart';
 import '../bloc/signup_event.dart';
 import '../bloc/signup_state.dart';
@@ -31,35 +27,35 @@ class _SignUpFormState extends State<SignUpForm> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("All field is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (emailController.text == "") {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Email is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (passwordController.text == "") {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Password is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (nameController.text == "") {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Name is empty!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else if (!(emailController.text.contains("@"))) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Wrong type of email!"),
-          backgroundColor: Theme.of(context).errorColor,
+          backgroundColor: Theme.of(context).colorScheme.error,
         ),
       );
     } else {
@@ -84,7 +80,7 @@ class _SignUpFormState extends State<SignUpForm> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('${state.error}'),
-              backgroundColor: Theme.of(context).errorColor,
+              backgroundColor: Theme.of(context).colorScheme.error,
             ),
           );
         }

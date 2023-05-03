@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -19,7 +18,6 @@ import '../feature/landing_page.dart';
 import '../feature/signin/authentication/bloc/authentication_bloc.dart';
 import '../feature/signin/authentication/bloc/authentication_event.dart';
 import '../feature/signin/authentication/resource/authentication_repository.dart';
-import '../main.dart';
 
 class App extends StatelessWidget {
   final Env env;

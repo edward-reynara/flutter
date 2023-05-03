@@ -20,7 +20,7 @@ class DeviceApiProvider {
         'deviceType': deviceType
       });
       return await apiProvider.post('$baseUrl/device', data);
-    } on Error catch (e) {
+    } on Error {
       //throw Exception('Failed to load post ' + e.toString());
     }
   }
@@ -34,7 +34,7 @@ class DeviceApiProvider {
         'deviceType': deviceType
       });
       return await apiProvider.post('$baseUrl/device/delete', data);
-    } on Error catch (e) {
+    } on Error {
       //throw Exception('Failed to load post ' + e.toString());
     }
   }

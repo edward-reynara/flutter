@@ -47,7 +47,7 @@ class AuthApiProvider {
       }
       final String data = json.encode(params);
       return await apiProvider.post('$baseUrl/v1/auth/login', data);
-    } on Error catch (e) {
+    } on Error {
       //throw Exception('Failed to load signIn ' + e.toString());
     }
   }

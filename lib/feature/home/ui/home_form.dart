@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../app/Pallete.dart';
@@ -82,7 +81,7 @@ class _HomeFormState extends State<HomeForm> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('${state.message}'),
-            backgroundColor: Theme.of(context).errorColor,
+            backgroundColor: Theme.of(context).colorScheme.error,
           ),
         );
       }

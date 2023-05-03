@@ -4,7 +4,6 @@ import '../../helper/env.dart';
 import '../../http/http_provider.dart';
 import '../../http/response.dart';
 import 'general_api_provider.dart';
-import 'dart:io' show Platform;
 
 class GeneralRepository {
   final HttpProvider apiProvider;
