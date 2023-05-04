@@ -59,18 +59,76 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
       if (state is HomeExpired) {
         return AlertWidget();
       }
-      // if (state is EmptyHome) {
-      //   LoadingWidget(visible: false);
-      //   return Center(
-      //       child: Text(state.text,
-      //           textAlign: TextAlign.center,
-      //           style: TextStyle(fontSize: 16)));
-      // }
       if (state is HomeLoaded) {
         LoadingWidget(visible: false);
-        Center(
-          child: Text("SS"),
-        );
+        return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                Material(
+                  child: TabBar(
+                    indicatorColor: Theme.of(context).primaryColor,
+                    controller: _tabController,
+                    labelColor: Theme.of(context).primaryColor,
+                    unselectedLabelColor: Colors.grey,
+                    tabs: [
+                      Tab(text: 'ACTIVE'),
+                      Tab(text: 'EXPIRING'),
+                    ],
+                  ),
+                ),
+                Expanded(
+                    flex: 1,
+                    child: TabBarView(
+                      controller: _tabController,
+                      children: [
+                        // //Content Tab Home Active
+                        // BlocProvider(
+                        //   create: (context) {
+                        //     return ActiveHomeBloc(
+                        //       homeRepository: HomeRepository(
+                        //         apiProvider:
+                        //         RepositoryProvider.of<HttpProvider>(
+                        //             context),
+                        //         env: RepositoryProvider.of<Env>(context),
+                        //       ),
+                        //     )..add(ActiveHomeStarted());
+                        //   },
+                        //   child: HomeActivePage(),
+                        // ),
+                        // //Content Tab Home Expiring
+                        // BlocProvider(
+                        //   create: (context) {
+                        //     return ExpiringHomeBloc(
+                        //       homeRepository: HomeRepository(
+                        //         apiProvider:
+                        //         RepositoryProvider.of<HttpProvider>(
+                        //             context),
+                        //         env: RepositoryProvider.of<Env>(context),
+                        //       ),
+                        //     )..add(ExpiringHomeStarted());
+                        //   },
+                        //   child: HomeExpiringPage(),
+                        // ),
+                        // // HomeExpiredPage(),
+                        // //Content Tab Home Expired
+                        // BlocProvider(
+                        //   create: (context) {
+                        //     return ExpiredHomeBloc(
+                        //       homeRepository: HomeRepository(
+                        //         apiProvider:
+                        //         RepositoryProvider.of<HttpProvider>(
+                        //             context),
+                        //         env: RepositoryProvider.of<Env>(context),
+                        //       ),
+                        //     )..add(ExpiredHomeStarted());
+                        //   },
+                        //   child: HomeExpiredPage(),
+                        // ),
+                      ],
+                    ))
+              ],
+            ));
       }
       if (state is ExpiredLoaded) {
         LoadingWidget(visible: false);
