@@ -48,7 +48,7 @@ class BottomNavigationBloc
         if (targetMenu == "searchproduct") {
           this.currentIndex = 3;
           prefs.remove("target_menu");
-          yield SearchPageLoaded(text: "Search");
+          // yield SearchPageLoaded(text: "Search");
         }
       }
       this.add(PageTapped(index: this.currentIndex));
@@ -74,7 +74,7 @@ class BottomNavigationBloc
       }
 
       if (this.currentIndex == 3) {
-        yield SearchPageLoaded(text: "SEARCH");
+        yield GenrePageLoaded(text: "GENRE");
       }
 
       if (this.currentIndex == 4) {

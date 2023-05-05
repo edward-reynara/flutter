@@ -4,6 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../component/helper/env.dart';
 import '../../../component/http/http_provider.dart';
 import '../../../component/widget/loading_widget.dart';
+import '../../genre/resource/genre_repository.dart';
+import '../../genre/tabbar_genre/bloc/tabbar_genre_bloc.dart';
+import '../../genre/tabbar_genre/bloc/tabbar_genre_event.dart';
+import '../../genre/ui/genre_page.dart';
 import '../../home/bloc/home_bloc.dart';
 import '../../home/bloc/home_event.dart';
 import '../../home/resource/home_repository.dart';
@@ -50,6 +54,27 @@ class MainPage extends StatelessWidget {
                       )..add(HomeStarted());
                     },
                     child: HomePage(),
+                  ),
+                );
+              }
+              if (state is GenrePageLoaded) {
+                print('GenrePageLoaded');
+                LoadingWidget(visible: false);
+                return RepositoryProvider(
+                  create: (context) => GenreRepository(
+                      apiProvider: RepositoryProvider.of<HttpProvider>(context),
+                      env: RepositoryProvider.of<Env>(context)),
+                  child: BlocProvider(
+                    create: (context) {
+                      return TabBarGenreBloc(
+                        genreRepository: GenreRepository(
+                          apiProvider:
+                              RepositoryProvider.of<HttpProvider>(context),
+                          env: RepositoryProvider.of<Env>(context),
+                        ),
+                      )..add(TabStarted());
+                    },
+                    child: GenrePage(),
                   ),
                 );
               }

@@ -60,16 +60,16 @@ class AddPageLoaded extends BottomNavigationState {
   String toString() => "add page load with text: $text";
 }
 
-class SearchPageLoaded extends BottomNavigationState {
+class GenrePageLoaded extends BottomNavigationState {
   final String text;
 
-  SearchPageLoaded({@required this.text}) : super([text]);
+  GenrePageLoaded({@required this.text}) : super([text]);
 
   @override
   List<Object> get props => [];
 
   @override
-  String toString() => "searchproduct page load with text: $text";
+  String toString() => "search page load with text: $text";
 }
 
 class SettingsPageLoaded extends BottomNavigationState {

@@ -72,8 +72,8 @@ class _HomePage extends State<HomePage> with SingleTickerProviderStateMixin {
                     labelColor: Theme.of(context).primaryColor,
                     unselectedLabelColor: Colors.grey,
                     tabs: [
-                      Tab(text: 'ACTIVE'),
-                      Tab(text: 'EXPIRING'),
+                      Tab(text: 'Bacaan Terakhir'),
+                      Tab(text: 'Daftar Saya'),
                     ],
                   ),
                 ),
